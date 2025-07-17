@@ -24,7 +24,7 @@ This repository contains a Jupyter notebook for training a deep learning model t
 ### 📈 Visualizations
 - The notebook includes performance plots and prediction visualizations using `matplotlib`.
 - Bounding boxes are overlaid on validation images to check prediction accuracy.
-- In visualization the image path and label path should be changed make sure that the image used for visualization is a part of val folder
+- In visualization the image path and label path should be changed and make sure that the image used for visualization is a part of val folder
 
 ---
 

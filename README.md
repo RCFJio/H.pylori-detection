@@ -1,7 +1,7 @@
 # 🧪 H. pylori Detection using Deep Learning
 
 ## YOLO V11
-This repository contains a Jupyter notebook for training a deep learning model to detect *Helicobacter pylori* in histopathology images using EfficientNet and YOLO-like pipelines.
+This repository contains a Jupyter notebook for training a deep learning model to detect *Helicobacter pylori* in histopathology images using YOLO-like pipelines.
 
 ### 📊 Current Results
 - **Validation mAP@50**: `0.35`

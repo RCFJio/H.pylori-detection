@@ -7,6 +7,7 @@ This repository contains a Jupyter notebook for training a deep learning model t
 ### 📊 Current Results
 - **Validation mAP@50**: `0.53`
 - Some images in the dataset **may not have bounding boxes** due to the absence of detectable regions.
+- The model was trained for 220 epochs and is stored in gdrive for validation and training
 
 ### 📁 Directory and Dataset Notes
 - Ensure that your **validation image path is different from training path** in the `data.yaml` file.

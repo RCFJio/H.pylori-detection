@@ -60,3 +60,5 @@ To improve detection performance on **20× magnification histopathology images**
 #### 🔧 Notes
 - YOLO format annotations are used: `class x_center y_center width height` (all normalized).
 - Ensure all dependencies (e.g., TensorFlow, OpenCV, matplotlib) are installed for smooth execution.
+- pip install -r requirements.txt to install all dependencies
+- In case gdown does not work use folder of above format

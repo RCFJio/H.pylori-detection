@@ -1,0 +1,15 @@
+# Core Machine Learning & Computer Vision
+torch>=2.0.0
+torchvision
+ultralytics>=8.3.0
+super-image
+opencv-python
+numpy
+pandas
+
+# Image Processing & Visualization
+Pillow
+matplotlib
+
+# Utilities
+gdown

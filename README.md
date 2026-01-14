@@ -62,3 +62,6 @@ To improve detection performance on **20× magnification histopathology images**
 - Ensure all dependencies (e.g., TensorFlow, OpenCV, matplotlib) are installed for smooth execution.
 - pip install -r requirements.txt to install all dependencies
 - In case gdown does not work use folder of above format
+- python -m venv venv
+- source venv/bin/activate
+- above steps is for creating virtual environment

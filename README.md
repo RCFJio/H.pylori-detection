@@ -2,6 +2,13 @@
 
 This repository contains a Jupyter notebook for training a deep learning model to detect *Helicobacter pylori* in histopathology images using YOLO-like pipelines.
 
+#Initial Env Setup
+// one time execution
+1. python3 -m venv venv 
+2. source venv/bin/activate
+// one time execution
+3.  pip3 install -r requirements.txt
+
 ## YOLO V11
 
 ### 📊 Current Results

@@ -21,10 +21,10 @@ import gdown
 def download_files():
     # Format: "File_ID": "Desired_Filename"
     files = {
-        "1K3ONWL95Ol7Y47yXJbI2jza8iwPjY4uJ": "file1.pt",
-        "15NBOHLitJblqsrVWDC1RO5FH8_va4yct": "file2.pt",
+        "1K3ONWL95Ol7Y47yXJbI2jza8iwPjY4uJ": "file1.zip",
+        "15NBOHLitJblqsrVWDC1RO5FH8_va4yct": "file2.jpg",
         "1wF-j4VaHh5scAu1n7hMzyvuPEb70mM_a": "file3.zip",
-        "1kojPlfQqfP7JZqehnnLiuDyICIhOxcbU": "file4.zip"
+        "1kojPlfQqfP7JZqehnnLiuDyICIhOxcbU": "file4.pt"
     }
 
     for file_id, filename in files.items():
@@ -89,7 +89,7 @@ def draw_boxes(image, boxes, color=(0, 255, 0), label=''):
 if __name__ == "__main__":
     # Download and Unzip
     download_files()
-    silent_unzip('yolo-647.zip', 'yolo')
+    silent_unzip('file3.zip', 'yolo')
     
     # Prepare Data
     if not os.path.exists("dataset"):
@@ -101,7 +101,7 @@ if __name__ == "__main__":
         f.write("train: images/train\nval: images/val\nnc: 1\nnames: ['h_pylori']")
 
     # Load Model
-    model = YOLO('last(dabest)220(2-4).pt') #base model used is yolo11l.pt
+    model = YOLO('file4.pt') #base model used is yolo11l.pt
     
     # Optional: Training
     # torch.cuda.empty_cache()
@@ -125,4 +125,5 @@ if __name__ == "__main__":
         plt.imshow(img_pred)
         plt.axis('off')
         plt.title("YOLO Prediction")
+
         plt.show()

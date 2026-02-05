@@ -20,10 +20,15 @@ import gdown
 
 def download_files():
     # Format: "File_ID": "Desired_Filename"
+    #1wF-j4VaHh5scAu1n7hMzyvuPEb70mM_a is the id of smaller dataset
+    #file1 contains a sample test dataset
+    #file2 contains a sample image
+    #file3 contains current dataset
+    #file4 contains previous model if any note current model v11 - large and study is being conducted on yolo 26
     files = {
         "1K3ONWL95Ol7Y47yXJbI2jza8iwPjY4uJ": "file1.zip",
         "15NBOHLitJblqsrVWDC1RO5FH8_va4yct": "file2.jpg",
-        "1wF-j4VaHh5scAu1n7hMzyvuPEb70mM_a": "file3.zip",
+        "1F7uP2R1g-lKqRvfr-osb11SezKlfNOz_": "file3.zip",
         "1kojPlfQqfP7JZqehnnLiuDyICIhOxcbU": "file4.pt"
     }
 
@@ -44,8 +49,8 @@ def silent_unzip(zip_path, extract_to):
 # 3. Data Preparation (Train/Val split)
 def prepare_dataset():
     random.seed(42)
-    img_dir = "./yolo/yolo-647/new-yolo/images"
-    lbl_dir = "./yolo/yolo-647/new-yolo/labels"
+    img_dir = "./yolo/yolo-851/yolo-647/new-yolo/images"
+    lbl_dir = "./yolo/yolo-851/yolo-647/new-yolo/labels"
     
     train_img_dir = "./dataset/images/train"
     val_img_dir = "./dataset/images/val"
@@ -101,11 +106,11 @@ if __name__ == "__main__":
         f.write("train: images/train\nval: images/val\nnc: 1\nnames: ['h_pylori']")
 
     # Load Model
-    model = YOLO('file4.pt') #base model used is yolo11l.pt
+    model = YOLO('yolo26l.pt') #base model used for the saved model is yolo11l.pt now the model being considered is yolo26
     
     # Optional: Training
-    # torch.cuda.empty_cache()
-    # model.train(data='dataset/data.yaml', epochs=100, imgsz=1280, batch=4, name='small_dataset_yolo', project='runs/train')
+    torch.cuda.empty_cache()
+    model.train(data='dataset/data.yaml', epochs=100, imgsz=1280, batch=4, name='small_dataset_yolo', project='runs/train',augment=True, save_period=20, val=True)
 
     # Inference Example
     image_path = './yolo/22.12.25/0001.jpg'
@@ -127,3 +132,4 @@ if __name__ == "__main__":
         plt.title("YOLO Prediction")
 
         plt.show()
+
